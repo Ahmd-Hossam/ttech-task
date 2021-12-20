@@ -1,0 +1,12 @@
+<div class="card mb-3" *ngFor="let user of userData; index as i">
+    <div class="imgContainer">
+        <img class="card-img-top" [src]="user.img" alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"> name   :     <span>  {{user.name}}      </span></h5>
+      <h5 class="card-title"> age    :     <span>  {{user.age}}       </span></h5>
+      <h5 class="card-title"> mobile :     <span>  {{user.mobile}}    </span></h5>
+      <h5 class="card-title"> address   :  <span>  {{user.address}}   </span></h5>
+      <h5 class="card-title"> position   : <span>  {{user.position}}  </span></h5>
+    </div>
+  </div>

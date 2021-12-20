@@ -1,0 +1,65 @@
+<app-nav [userName]="userName"></app-nav>
+<div class="container setting-card" >
+    <ul ngbNav #nav1="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1" >
+          <a ngbNavLink *ngIf="userRole === 'UserA'"> User A Data </a>
+          <ng-template ngbNavContent *ngIf="userRole === 'UserA'">
+            <p>
+                <app-user-a (userName)="getUserName($event)"></app-user-a>
+            </p>
+          </ng-template>
+
+          <a ngbNavLink *ngIf="userRole === 'UserB'"> User B Data </a>
+          <ng-template ngbNavContent *ngIf="userRole === 'UserB'">
+            <p>
+                <app-user-b (userName)="getUserName($event)"></app-user-b>
+            </p>
+          </ng-template>
+
+          <a ngbNavLink *ngIf="userRole === 'UserC'"> User C Data </a>
+          <ng-template ngbNavContent *ngIf="userRole === 'UserC'">
+            <p>
+                <app-user-c (userName)="getUserName($event)"></app-user-c>
+            </p>
+          </ng-template>
+        </li>
+    </ul>
+    <div [ngbNavOutlet]="nav1" class="mt-2"></div>
+</div>
+
+<!-- if he is admin user to show all users -->
+<div class="container setting-card" *ngIf="userRole === 'Admin'">
+  <ul ngbNav #nav2="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink> User A Data </a>
+        <ng-template ngbNavContent>
+          <p>
+              <app-user-a (userName)="getUserName($event)"></app-user-a>
+          </p>
+        </ng-template>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a ngbNavLink> User B Data </a>
+        <ng-template ngbNavContent>
+          <p>
+              <app-user-b (userName)="getUserName($event)"></app-user-b>
+          </p>
+        </ng-template>
+      </li>
+
+      <li [ngbNavItem]="3" >
+        <a ngbNavLink> User C Data </a>
+        <ng-template ngbNavContent>
+          <p>
+              <app-user-c (userName)="getUserName($event)"></app-user-c>
+          </p>
+        </ng-template>
+      </li>
+  </ul>
+  <div [ngbNavOutlet]="nav2" class="mt-2"></div>
+</div>
+
+
+
+

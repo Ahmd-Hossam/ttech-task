@@ -1,0 +1,90 @@
+@import "../../../assets/css/variabels.scss";
+.not-authorized-area {
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    background: #f6f7fb;
+
+    &.bg-image {
+        background: {
+          //  image: url(/assets/img/not-authorized-bg.jpg);
+            position: center center;
+            size: cover;
+            repeat: no-repeat;
+        };
+    }
+
+    .d-table {
+        width: 100%;
+        height: 100%;
+
+        &-cell {
+            vertical-align: middle;
+        }
+    }
+
+    .not-authorized-content {
+        max-width: 850px;
+        background: $white-color;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        padding: 50px 60px 50px 30px;
+        box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
+        margin: {
+            left: auto;
+            right: auto;
+        };
+
+        .logo {
+            display: inline-block;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        h2 {
+            // background: url(/assets/img/oops-bg.jpg) no-repeat;
+            text-transform: uppercase;
+            font-size: 35px;
+            font-weight: 900;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            color: #3f3d56;
+        }
+
+        p {
+            color: #6084a4;
+            line-height: 1.7;
+            max-width: 500px;
+            margin: {
+                left: auto;
+                right: auto;
+                bottom: 20px;
+                top: 0;
+            };
+        }
+
+        .default-btn {
+
+            text-decoration: none;
+            padding: 13px 35px 12px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            display: inline-block;
+            background-color: $main-color;
+            color: $white-color;
+            cursor: pointer;
+            font: {
+                size: 15px;
+                weight: 700;
+            };
+
+            &:hover, &:focus {
+                background-color: $nero_color;
+                color: $white-color;
+            }
+        }
+    }
+}
